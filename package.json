@@ -1,0 +1,50 @@
+{
+  "name": "generator-bono-metronic",
+  "version": "0.0.5",
+  "description": "Scaffolding bono using metronic bootstrap themes",
+  "homepage": "sagara.id",
+  "author": {
+    "name": "Januar Siregar",
+    "email": "januar.siregar@gmail.com",
+    "url": "http://sagara.id"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "bono metronic bootstrap",
+    "yeoman-generator"
+  ],
+  "devDependencies": {
+    "yeoman-test": "^1.6.0",
+    "yeoman-assert": "^3.0.0",
+    "nsp": "^2.6.3",
+    "eslint": "^4.1.0",
+    "eslint-config-xo-space": "^0.16.0",
+    "jest": "^19.0.2",
+    "jest-cli": "^20.0.0"
+  },
+  "dependencies": {
+    "yeoman-generator": "^1.0.0",
+    "chalk": "^1.1.3",
+    "yosay": "^2.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "scripts": {
+    "prepublish": "nsp check",
+    "pretest": "eslint . --fix",
+    "test": "jest"
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "jest": true,
+      "node": true
+    }
+  },
+  "repository": "januarsiregar/generator-bono-metronic",
+  "license": "MIT"
+}
