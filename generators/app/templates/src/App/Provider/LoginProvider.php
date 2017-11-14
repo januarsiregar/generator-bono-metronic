@@ -9,8 +9,6 @@ class LoginProvider extends \Bono\Provider\Provider
         $app = $this->app;
         $that = $this;
 
-
-
         $app->filter('auth.login.success', function ($user) use ($app) {
             $roles = $user['role'];
             $auth_uris = array();

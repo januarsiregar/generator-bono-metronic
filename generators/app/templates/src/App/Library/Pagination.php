@@ -69,18 +69,42 @@ class Pagination
         }
 
         if(!empty($_GET)){
-            $querystring = '';
-            foreach ($_GET as $key => $value) {
-                if($key != '!skip' && $key != '!sort'){
-                    if($querystring == '' ){
-                        $querystring = $key . '=' . $value;
-                    }else{
-                        $querystring .='&' . $key . '=' . $value;
+            $get = $this->app->request->get();
+            $sort = $this->app->request->get('!sort')?:array();
+            $or = $this->app->request->get('!or')?:array();
+            
+            $search = array();
+            foreach ($get as $key => $value) {
+                if($key != '!skip' && $key != '!sort'  && $key != '!or'){
+                    if(is_array($value)){
+                        foreach ($value as $k => $v) {
+                            $search[] = $key . '[]=' . $v;        
+                        }
+                        continue;
+
                     }
+                    $search[] = $key . '=' . $value;
                 }
             }
-            
-            $this->baseUrl = URL::current() .'?'. $querystring;
+
+            $or_array = array();
+            foreach ($or as $key => $value) {
+                if(is_array($value)){
+                    foreach ($value as $k => $v) {
+                        $or_array[]  = '!or['.$key.'][]='.$v;
+                    }
+                    continue;
+                }
+                $or_array[] = '!or['.$key.']='.$value;
+            }
+
+            $sort_array = array();
+            foreach ($sort as $key => $value) {
+                $sort_array[] = '!sort['.$key.']='.$value;
+            }
+
+
+            $this->baseUrl = URL::current() .'?'. implode("&",$search).implode("&",$sort_array).implode("&",$or_array);
         }else{
             $this->baseUrl = URL::current() . '?';
         }
@@ -179,7 +203,7 @@ class Pagination
                 $isCurrent       = ($skip == ($i*$limit));
                 $paging = $paging. $this->page($i, $isCurrent);
             }
-            $paging = $paging . '<li>...</li>';
+            $paging = $paging . '<li><span>...</span></li>';
 
             $last = 3;
             for ($i = $total - $last ; $i < $total; $i++) {
@@ -193,7 +217,7 @@ class Pagination
                 $paging = $paging. $this->page($i, false);
             }
             
-            $paging = $paging . '<li>...</li>';
+            $paging = $paging . '<li><span>...</span></li>';
 
             $last = 5;
 
@@ -214,14 +238,14 @@ class Pagination
             }
             
 
-            $paging = $paging . '<li>...</li>';
+            $paging = $paging . '<li><span>...</span></li>';
             $last=$this->current + 2;
             for ($i = $this->current - 2 ; $i < $last+1; $i++) {
                 $isCurrent       = ($skip == ($i*$limit));
                 $paging = $paging. $this->page($i, $isCurrent);
             }
 
-            $paging = $paging . '<li>...</li>';
+            $paging = $paging . '<li><span>...</span></li>';
 
             $last = 3;
             

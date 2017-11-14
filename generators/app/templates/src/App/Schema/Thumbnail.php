@@ -2,10 +2,10 @@
 
 namespace App\Schema;
 
-use \Norm\Schema\Object;
+use \Norm\Schema\NormObject;
 use \Bono\Helper\URL;
 
-class Thumbnail extends Object{
+class Thumbnail extends NormObject{
 
     public function formatInput($value, $entry = null)
     {
@@ -15,7 +15,7 @@ class Thumbnail extends Object{
         }
         
 
-        if($value instanceof \Norm\Type\Object){
+        if($value instanceof \Norm\Type\NObject){
                 $value = $value->toArray();
         }
 
@@ -37,7 +37,7 @@ class Thumbnail extends Object{
             return '';
         }
 
-        if($value instanceof \Norm\Type\Object){
+        if($value instanceof \Norm\Type\NObject){
             $value = $value->toArray();
         }
         if(count($value) < 1){
@@ -52,7 +52,7 @@ class Thumbnail extends Object{
     {   
         $path= "data";
        
-        if($value instanceof \Norm\Type\Object){
+        if($value instanceof \Norm\Type\NObject){
                 $value = $value->toArray();
         }
         if(count($value) <= 0){

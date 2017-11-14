@@ -44,7 +44,9 @@ class AppController extends NormController
 
     public function getSort(){
         $sort = parent::getSort();
-        $sort['$created_time'] = -1;
+        if(empty($sort)){
+            $sort['$created_time'] = -1;
+        }
         return $sort;
     }
 

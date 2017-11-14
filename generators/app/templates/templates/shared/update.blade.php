@@ -1,4 +1,4 @@
-@extends('skeleton')
+@extends('layout')
 
 <?php use ROH\Util\Inflector; ?>
 

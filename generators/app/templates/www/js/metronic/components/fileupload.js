@@ -11,7 +11,11 @@ var FileUpload = function() {
 
             element.each(function(e) {
                 var obj = $(this);
+                var native = this
                 var value = obj.find("input[type='hidden']").val();
+                var button = native.querySelector('button');
+                var file = obj.find('input[type="file"]');
+
 
                 if (value != '') {
                     var img = document.createElement('img');
@@ -23,15 +27,23 @@ var FileUpload = function() {
                     }
                 }
 
+                $(button).click(function(e) {
+                    e.preventDefault();
+                    file.trigger('click');
+
+                });
+
                 obj.find("input[type='file']").change(function(e) {
                     var input = $(this).get(0).files;
-                    var uri = 'index.php/metronic/upload_file.json';
+                    var uri = obj.data('url');
+                    FileUpload.spinner.start(obj);
 
                     if (obj.data('bucket') != '') {
                         uri += '?bucket=' + obj.data('bucket');
                     }
 
-                    FileUpload.upload(input, obj.data('url') + uri, function(data, error) {
+                    FileUpload.upload(input, uri, function(data, error) {
+                        FileUpload.spinner.stop(obj);
                         if (error) {
                             return;
                         }
@@ -47,6 +59,7 @@ var FileUpload = function() {
 
                             obj.find('.fileupload-filename').html(curobj.name);
                         }
+
 
                     });
 
@@ -71,7 +84,6 @@ var FileUpload = function() {
             $('filereadonly').each(function(e) {
                 var obj = this;
                 if ($(this).find('input[type="hidden"]').val() == '') {
-                    console.log($(this).find('button.btn-download'));
                     $(this).find('button.btn-download').attr('disabled', true);
                     return;
                 }
@@ -81,9 +93,6 @@ var FileUpload = function() {
                     window.open(url, '_blank');
 
                 });
-
-
-
             });
         },
         processFile: function(files) {
@@ -95,6 +104,19 @@ var FileUpload = function() {
         upload: function(file, url, cb = null) {
             Thumbnail.upload(file, url, cb);
         },
+        spinner: function() {
+            return {
+                start: function(obj) {
+                    obj.find('button span.spinner').addClass('show');
+                    obj.find('.btn').attr('disabled', true);
+
+                },
+                stop: function(obj) {
+                    obj.find('button span.spinner').removeClass('show');
+                    obj.find('.btn').attr('disabled', false);
+                }
+            }
+        }()
 
     };
 

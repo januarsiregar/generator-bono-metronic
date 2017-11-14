@@ -5,9 +5,9 @@ namespace App\Schema;
 use \Norm\Norm;
 use \Bono\Helper\URL;
 use \Bono\App;
-use \Norm\Schema\DateTime;
+use \Norm\Schema\NormDate;
 
-class DatePicker extends DateTime
+class DatePicker extends NormDate
 {
 
     public $date_format = "yyyy-mm-dd";

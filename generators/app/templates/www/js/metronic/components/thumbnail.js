@@ -17,7 +17,7 @@ var Thumbnail = function() {
                     var img = document.createElement('img');
                     value = JSON.parse(value);
 
-                    img.src = obj.data('url') + '/' + value.bucket + '/' + value.filename;
+                    img.src = window.base_url + value.bucket + '/' + value.filename;
 
                     obj.find('.filethumbnail-preview.thumbnail').append(img);
                     if (obj.hasClass('filethumbnail-new')) {
@@ -28,14 +28,17 @@ var Thumbnail = function() {
 
                 obj.find("input[type='file']").change(function(e) {
                     var input = $(this).get(0).files;
-                    var uri = 'index.php/metronic/upload_file.json';
+                    var uri = obj.data('url');
 
                     if (obj.data('bucket') != '') {
                         uri += '?bucket=' + obj.data('bucket');
 
                     }
 
-                    Thumbnail.upload(input, obj.data('url') + uri, function(data, error) {
+                    Thumbnail.spinner.start(obj);
+
+                    Thumbnail.upload(input, uri, function(data, error) {
+                        Thumbnail.spinner.stop(obj);
                         if (error) {
                             return;
                         }
@@ -49,8 +52,8 @@ var Thumbnail = function() {
                             obj.find('input[type="hidden"]').val(JSON.stringify(data[0]));
                             if (obj.find('.filethumbnail-preview.thumbnail').length > 0) {
                                 var img = document.createElement('img');
-                                img.src = obj.data('url') + '/' + data[0].bucket + '/' + data[0].filename;
-                                obj.find('.filethumbnail-preview.thumbnail').html('');
+                                img.src = window.base_url + data[0].bucket + '/' + data[0].filename;
+                                obj.find('.filethumbnail-preview.thumbnail img').remove();
                                 obj.find('.filethumbnail-preview.thumbnail').append(img);
                             }
                         }
@@ -110,6 +113,19 @@ var Thumbnail = function() {
 
             });
         },
+        spinner: function() {
+            return {
+                start: function(obj = null) {
+                    obj.find('span.spinner').addClass('show');
+
+                },
+                stop: function(obj = null) {
+                    obj.find('span.spinner').removeClass('show');
+                }
+
+            }
+
+        }()
 
     };
 

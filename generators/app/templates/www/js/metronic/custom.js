@@ -32,21 +32,6 @@ $(function() {
 
     // end simple search
 
-    // themes convert 
-    $(function() {
-        $('#createform input[type=text],#updateform input[type=text],#readform input[type=text]').addClass('form-control');
-        $('#createform input[type=password],#updateform input[type=password]').addClass('form-control col-md-6');
-        $('#createform input[type=password],#updateform input[type=password]').removeClass('span-6');
-
-        $('#createform textarea,#updateform textarea, #readform textarea').addClass('form-control');
-        $('#createform select,#updateform select').addClass('form-control');
-        $('#createform input[type=text],#updateform input[type=text]').attr('placeholder', '');
-        $('#readform span.field').addClass('form-control');
-        $('#createform .form-group label,#updateform .form-group label').addClass('control-label');
-    });
-    // themes convert 
-
-
 
 
     // $('th type=[type=checkbox]').('checked')
@@ -66,6 +51,14 @@ $(function() {
     // popup delete
     $(function() {
         $("a.delete-popup").popup();
+        $('.popup').popup({
+            afterLoad: function() {
+                Themes.init($('#' + this.id));
+                DatePicker.init($('#' + this.id));
+                InputMask.init($('#' + this.id));
+                Select2Reference.init($('#' + this.id));
+            }
+        })
     });
 
     $(function() {
@@ -86,9 +79,8 @@ $(function() {
                 $delete.push($(this).val());
             }
         });
-        console.log($delete);
+
         if ($delete.length > 0) {
-            console.log('masuk');
             $(this).popup({ url: $(this).attr('href').toString().replace(':mutliid', $delete.join()), eventtarget: e });
         }
 

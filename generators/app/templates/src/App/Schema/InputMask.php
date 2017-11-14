@@ -2,10 +2,10 @@
 
 namespace App\Schema;
 
-use Norm\Schema\String;
+use Norm\Schema\NormString;
 use Bono\App;
 
-class InputMask extends String{
+class InputMask extends NormString{
 
     public function  __construct($name = null, $label = null)
     {

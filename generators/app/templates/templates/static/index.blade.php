@@ -1,4 +1,4 @@
-@extends('skeleton')
+@extends('layout')
 
 @section('content')
     <div>

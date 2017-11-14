@@ -1,4 +1,4 @@
-<fileupload class="fileupload fileupload-new"  data-url="<?php echo URL::base('') ?>" data-bucket="<?php echo $self['bucket'] ?>">
+<fileupload class="fileupload fileupload-new"  data-url="<?php echo $url ?>" data-bucket="<?php echo $self['bucket'] ?>">
     <div class="input-group">
         <div class="form-control uneditable-input input-fixed" >
             <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -9,10 +9,18 @@
                 <input type="hidden" name="<?php echo $self['name'] ?>" id="<?php echo $self['name'] ?>" />
             <?php endif; ?>
         </div>
-        <span class="input-group-addon btn default btn-file">
-            <span class="fileupload-new"> Select file </span>
-            <span class="fileupload-exists"> Change </span>
-            <input type="file"> </span>
-        <a href="javascript:;" class="input-upload-addon btn red fileupload-exists" data-dismiss="fileinput"> Remove </a>
+        <input type="file"> 
+        <span class="input-group-btn" >
+            <button type="button" class="btn blue " >
+                <span class="spinner">
+                    <i class="fa fa-spinner fa-spin"></i>
+                </span>
+                <span class="label-spinner">
+                    <span class="fileupload-new"> Select file </span>
+                    <span class="fileupload-exists"> Change </span>
+                <span>
+            </button>
+            <a href="javascript:;" class="btn red fileupload-exists" data-dismiss="fileinput"> Remove </a>
+        </span>
     </div>
 </fileupload>

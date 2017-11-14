@@ -1,14 +1,23 @@
-
-
-body, h1, h2, h3, h4, h5, h6, p, span, th, td{
-    font-family: "Lato",sans-serif!important;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+th,
+td {
+    font-family: "Lato", sans-serif!important;
 }
 
 .lock-item.lock-item-full h4 {
     color: #fff;
     padding: 10px 0;
 }
-.no-background{
+
+.no-background {
     background-image: none;
 }
 
@@ -84,7 +93,8 @@ select.form-control {
 .form-group.form-md-line-input .select2-dropdown.select2-dropdown--below {
     border-color: #fff;
 }
-.form-group.form-md-line-input .control-label{
+/*
+.form-group.form-md-line-input .control-label {
     top: 0;
     margin-bottom: 0;
     font-size: 14px;
@@ -93,7 +103,7 @@ select.form-control {
     left: 0;
     bottom: 0;
     pointer-events: none;
-}
+}*/
 
 button.mt-multiselect.btn.btn-default {
     background: 0 0;
@@ -119,11 +129,10 @@ button.mt-multiselect.btn.btn-default:hover {
 /* material degign */
 
 
-/*.form-group.form-md-line-input {
-    margin: 0 0 10px;
-    padding-top: 10px;
+.form-group.form-md-line-input {
+    margin: 0 0 25px;
 }
-*/
+
 
 .input-group-addon.btn {
     padding: 0;
@@ -139,7 +148,8 @@ button.mt-multiselect.btn.btn-default:hover {
 .page-sidebar .page-sidebar-menu>li>ul>li>a>i {
     margin-right: 5px;
 }
-.dropdown-menu.advance .portlet-body.form{
+
+.dropdown-menu.advance .portlet-body.form {
     height: 50vh;
     overflow: scroll;
 }
@@ -161,12 +171,16 @@ button.mt-multiselect.btn.btn-default:hover {
     right: 22px;
 }
 
+
 /* TABLE FIXED TAIL */
-.table-fix{
+
+.table-fix {
     width: 100%;
     position: relative;
 }
-table.fixed-tail th:last-child, table.fixed-tail td:last-child{
+
+table.fixed-tail th:last-child,
+table.fixed-tail td:last-child {
     position: absolute!important;
     left: initial!important;
     right: 1px!important;
@@ -174,15 +188,22 @@ table.fixed-tail th:last-child, table.fixed-tail td:last-child{
     border-left: 1px solid #ddd!important;
     background-color: #fff;
 }
-table.fixed-tail th:nth-last-child(2), table.fixed-tail td:nth-last-child(2){
+
+table.fixed-tail th:nth-last-child(2),
+table.fixed-tail td:nth-last-child(2) {
     padding-right: 110px!important;
 }
-.table-scrollable .dataTable td>.btn-group, .table-scrollable .dataTable th>.btn-group{
+
+.table-scrollable .dataTable td>.btn-group,
+.table-scrollable .dataTable th>.btn-group {
     position: relative!important;
 }
-table.dataTable td, table.dataTable th{
+
+table.dataTable td,
+table.dataTable th {
     box-sizing: border-box!important;
 }
+
 .table.table-bordered.table-hover.table-checkable.order-column td {
     white-space: nowrap;
 }
@@ -196,6 +217,8 @@ table.fixed-tail th:last-child,
 table.fixed-tail tr:nth-of-type(even) td:last-child {
     background-color: #fff;
 }
+
+
 /* END TABLE FIXED-TAIL */
 
 .page-content-white .page-content .page-bar {
@@ -209,7 +232,8 @@ table.fixed-tail tr:nth-of-type(even) td:last-child {
 .portlet>.portlet-title>.nav-tabs {
     float: left;
 }
-table.fixed-tail th:last-child{
+
+table.fixed-tail th:last-child {
     color: #337ab7;
 }
 
@@ -335,17 +359,6 @@ table.fixed-tail th:last-child{
 
 /* logo */
 
-.logo-default {
-    width: 80px;
-    height: 30px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.page-header.navbar .page-logo .logo-default {
-    margin-top: 10px!important;
-}
 
 .page-lock .page-logo .brand .logo {
     width: 100%;
@@ -385,7 +398,6 @@ table.fixed-tail th:last-child{
     padding: 40px;
     background-color: #3a4554;
 }
-
 
 .form-group.form-md-line-input.search {
     padding-top: 0px;
@@ -429,6 +441,8 @@ a.quick-nav-trigger {
 
 
 /* dropdown button action */
+
+
 /*
 .dropdown-menu.pull-left {
     width: auto;
@@ -508,10 +522,13 @@ fileupload {
 
 /* componennt file upload  */
 
-.form-control.uneditable-input.input-fixed{
+.form-control.uneditable-input.input-fixed {
     position: relative;
 }
+
+
 /* component thumbnail and file upload  */
+
 
 /* BEGIN ADVANCE SEARCH */
 
@@ -520,9 +537,10 @@ fileupload {
     position: absolute;
     bottom: 0px;
     right: 0px;
-    z-index: 2;
+    z-index: 3;
 }
-.advance{
+
+.advance {
     display: none;
     position: absolute;
     top: 40px;
@@ -534,10 +552,12 @@ fileupload {
     max-height: 400px;
     overflow: auto;
 }
-.advance .portlet{
+
+.advance .portlet {
     margin-bottom: 0px;
 }
-.advance:after{
+
+.advance:after {
     position: absolute;
     top: -7px;
     left: 10px;
@@ -548,27 +568,31 @@ fileupload {
     border-left: 7px solid transparent;
     content: '';
 }
-.advance .form-group.form-md-line-input{
+
+.advance .form-group.form-md-line-input {
     display: flex;
 }
-.md-checkbox label{
+
+.md-checkbox label {
     font-size: 14px;
 }
+
 
 /* END ADVANCE SEARCH */
 
 
 /* datepicker */
+
 .datepicker table td,
 .datepicker table th,
 .datetimepicker table td,
 .datetimepicker table th {
-    font-family: "Lato",sans-serif!important;
+    font-family: "Lato", sans-serif!important;
 }
 
 
 /* BEGIN ROLE CSS */
 
-.panel-collapse .panel-body ul li{
+.panel-collapse .panel-body ul li {
     list-style: none;
 }

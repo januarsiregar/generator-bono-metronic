@@ -256,7 +256,7 @@ foreach (f('controller')->schema() as $key => $field) {
                                                                     @if($i++ === 0)
                                                                         <a href="{{ f('controller.url', '/'.$entry['$id']) }}">{{ substr($field->format('plain', $entry[$name], $entry), 0, 48) }}</a>
                                                                     @else
-                                                                        <?php try { $string = strip_tags($entry->format($name)); echo substr($string, 0, 48); } catch(\Exception $e) { echo 'xxx'; var_dump($e->getMessage());  } ?>
+                                                                        <?php try { $string = strip_tags($entry->format($name)); echo substr($string, 0, 48); } catch(\Exception $e) { echo '';} ?>
                                                                     @endif
                                                                 </td>
                                                             @endforeach

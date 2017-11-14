@@ -129,7 +129,7 @@
     <script src="<?php echo Theme::base('assets/global/scripts/app.min.js') ?>" type="text/javascript"></script>
     <script src="<?php echo Theme::base('assets/pages/scripts/login.min.js') ?>" type="text/javascript"></script>
     <script src="<?php echo Theme::base('vendor/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js') ?>" type="text/javascript"></script>
-    <script src="<?php echo Theme::base('js/notification.js') ?>" type="text/javascript"></script>
+    <script src="<?php echo Theme::base('js/metronic/notification.js') ?>" type="text/javascript"></script>
 
     <script>
         $(document).ready(function()

@@ -104,12 +104,13 @@
             </ul>
         </li>
         @show
+
         @section('inbox')
-        
         @show
+
         @section('task')
-        
         @show
+        
         @section('user')
         <li class="dropdown dropdown-user">
             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">

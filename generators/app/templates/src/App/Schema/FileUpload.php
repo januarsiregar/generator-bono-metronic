@@ -2,11 +2,11 @@
 
 namespace App\Schema;
 
-use \Norm\Schema\Object;
+use \Norm\Schema\NormObject;
 use \Bono\Helper\URL;
 use \Bono\App;
 
-class FileUpload extends Object{
+class FileUpload extends NormObject{
 
     public function formatInput($value, $entry = null)
     {
@@ -16,7 +16,7 @@ class FileUpload extends Object{
         }
         
 
-        if($value instanceof \Norm\Type\Object){
+        if($value instanceof \Norm\Type\NObject){
                 $value = $value->toArray();
         }
 
@@ -37,7 +37,7 @@ class FileUpload extends Object{
             return '';
         }
 
-        if($value instanceof \Norm\Type\Object){
+        if($value instanceof \Norm\Type\NObject){
             $value = $value->toArray();
         }
         if(count($value) < 1){
@@ -49,7 +49,7 @@ class FileUpload extends Object{
 
     public function formatReadonly($value, $entry = null)
     {   
-        if($value instanceof \Norm\Type\Object){
+        if($value instanceof \Norm\Type\NObject){
                 $value = $value->toArray();
         }
 

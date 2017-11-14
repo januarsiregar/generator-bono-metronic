@@ -23,12 +23,11 @@
             },
             popup = this,
             settings = $.extend({}, defaults, options);
-        console.log(settings.url);
-        this.close = function() {
+
+        this.close = function(e) {
             $("#" + settings.id).fadeOut(128);
             $("#" + settings.id + " > div > div > div").removeClass("animated " + settings.animation).html("");
-
-            settings.onClose();
+            settings.onClose(e);
         };
 
         return this.each(function() {
@@ -69,7 +68,12 @@
                 }
 
                 // Add loading content
-                $("#" + settings.id + " > div > div").html("<div id='popupContent' class='" + settings.className + "'><div class='content'><p class='loading'><i class='" + settings.iconPrefix + " " + settings.iconPrefix + "-circle-o-notch " + settings.iconPrefix + "-spin " + settings.iconPrefix + "-5x'></i></p></div></div>");
+
+                if (settings.classContent) {
+                    $("#" + settings.id + " > div > div").html("<div id='popupContent' class='" + settings.className + "'><div class='content " + settings.classContent + "'><p class='loading'><i class='" + settings.iconPrefix + " " + settings.iconPrefix + "-circle-o-notch " + settings.iconPrefix + "-spin " + settings.iconPrefix + "-5x'></i></p></div></div>");
+                } else {
+                    $("#" + settings.id + " > div > div").html("<div id='popupContent' class='" + settings.className + "'><div class='content'><p class='loading'><i class='" + settings.iconPrefix + " " + settings.iconPrefix + "-circle-o-notch " + settings.iconPrefix + "-spin " + settings.iconPrefix + "-5x'></i></p></div></div>");
+                }
 
                 // Set Height and Width
                 if (settings.width != "auto") {
@@ -134,6 +138,9 @@
                         });
                     } else if (settings.target !== "") {
                         $("#" + settings.id + " > div > div > div > div").html($(settings.target).html());
+                        settings.afterLoad();
+                    } else if (settings.content) {
+                        $("#" + settings.id + " > div > div > div > div").html(settings.content);
                         settings.afterLoad();
                     }
 

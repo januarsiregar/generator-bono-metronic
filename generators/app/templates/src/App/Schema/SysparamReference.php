@@ -12,7 +12,7 @@ class SysparamReference extends Reference{
 
         $this['foreign'] = 'Sysparam';
         $this['foreignLabel'] = 'value';
-        $this['foreignKey'] = 'keyz';
+        $this['foreignKey'] = 'key';
 
     }
 

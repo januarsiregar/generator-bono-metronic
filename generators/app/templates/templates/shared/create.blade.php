@@ -1,22 +1,9 @@
-@extends('skeleton')
+@extends('layout')
 
 <?php use ROH\Util\Inflector; ?>
 
 
-@section('modal')
 
- <div class="modal fade template" id="modal_template" role="basic" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="../www/assets/global/img/loading-spinner-grey.gif" alt="" class="loading">
-                    <span> &nbsp;&nbsp;Loading... </span>
-                </div>
-            </div>
-        </div>
- </div>
-
-@stop
 @section('page.breadcumb.section')
     <li>
         <a href="{{ f('controller.url') }}" >{{ l('{0}', Inflector::humanize(f('controller')->getClass())) }}</a>

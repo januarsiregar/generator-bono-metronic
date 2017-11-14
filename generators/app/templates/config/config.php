@@ -22,11 +22,12 @@ return array(
     ),
     'bono.timezone' => 'Asia/Jakarta',
     'bono.prettifyURL' => false,
+    'bono.debug' => true,
     'bono.salt' => '123456789',
     'bono.theme' => array(
         'class' => 'Xinix\\Theme\\Jacket',
         'overwrite' => true,
-        'default.class' => array('form-control'),
+        'htmlclass' => array('form-control'),
     ),
     'bono.providers' => array(
         'Norm\\Provider\\NormProvider' => array(
@@ -36,6 +37,17 @@ return array(
                     'driver' => 'Norm\\Connection\\MongoConnection',
                     'database' => 'bono',
                 ),
+
+                // to use mysql
+                // 'mysql' => array(
+                //     'driver'   => '\\Norm\\Connection\\PDOConnection',
+                //     'dialect'  => '\\Norm\\Dialect\\MySQLDialect',
+                //     'prefix'   => 'mysql',
+                //     'dbname'   => 'bono',
+                //     'host'     => 'localhost',
+                //     'username' => 'root',
+                //     'password' => 'password',
+                // )
             ),
             'collections' => array(
                 'default' => array(
@@ -79,9 +91,9 @@ return array(
             ),
         ),
         // uncomment below to enable auth
-        // 'Xinix\\BonoAuth\\Middleware\\AuthMiddleware' => array(
-        //     'driver' => 'Xinix\\BonoAuth\\Driver\\NormAuth',
-        // ),
+        'Xinix\\BonoAuth\\Middleware\\AuthMiddleware' => array(
+            'driver' => 'Xinix\\BonoAuth\\Driver\\NormAuth',
+        ),
         'App\\Middleware\\MetronicNotificationMiddleware' => null,
         'App\\Middleware\\AuditTrailMiddleware' => null,
         'Bono\\Middleware\\SessionMiddleware' => null,

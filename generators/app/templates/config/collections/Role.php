@@ -1,10 +1,14 @@
 <?php
 
-use Norm\Schema\String;
+use Norm\Schema\NormString;
 use Norm\Schema\Password;
 
 return array(
+    'observers' => array(
+        'App\\Observer\\RoleObserver' => null,
+
+    ),
     'schema' => array(
-        'name'   => String::create('name')->filter('trim|required|unique:Role,name')->set('list-column', true),
+        'name'   => NormString::create('name')->filter('trim|required|unique:Role,name')->set('list-column', true),
     ),
 );

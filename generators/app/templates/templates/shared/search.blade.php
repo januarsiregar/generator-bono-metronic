@@ -1,4 +1,4 @@
-@extends('skeleton')
+@extends('layout')
 
 <?php
 use ROH\Util\Inflector;
@@ -56,7 +56,7 @@ foreach (f('controller')->schema() as $key => $field) {
                             <div class="row">
                                 <div class="col-md-7 col-sm-7 col-xs-12">
                                     <div class="btn-group">
-                                        <a href="{{ f('controller.url', '/null/create') }}" id="sample_editable_1_new" class="btn sbold green"> Create
+                                        <a href="{{ f('controller.url', '/null/create') }}" id="sample_editable_1_new" class="btn sbold blue"> Create
                                             <i class="fa fa-plus"></i>
                                         </a>
                                     </div>
@@ -201,7 +201,7 @@ foreach (f('controller')->schema() as $key => $field) {
                                                 @if (count($schema))
                                                         <th>
                                                             <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="group-checkable search-checkbox" data-set="#sample_1 .checkboxes" />
+                                                                <input type="checkbox" class="group-checkable" data-set="#sample_1 .checkboxes" />
                                                                 <span></span>
                                                             </label>
                                                         </th>
@@ -215,19 +215,6 @@ foreach (f('controller')->schema() as $key => $field) {
                                                     <th>Data</th>
                                                 @endif
                                             </tr>
-                                            <!-- <tr>
-                                                <th>
-                                                    <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                        <input type="checkbox" class="group-checkable" data-set="#sample_1 .checkboxes" />
-                                                        <span></span>
-                                                    </label>
-                                                </th>
-                                                <th> Username </th>
-                                                <th> Email </th>
-                                                <th> Status </th>
-                                                <th> Joined </th>
-                                                <th> Actions </th>
-                                            </tr> -->
                                         </thead>
                                         @show
                                         <tbody>
@@ -258,13 +245,14 @@ foreach (f('controller')->schema() as $key => $field) {
                                                                         </button>
                                                                         <ul class="dropdown-menu pull-left search-action" role="menu">
                                                                             <li>
-                                                                                <a href="{{ f('controller.url', '/'.$entry['$id'].'/delete') }}" class="delete-popup">
-                                                                                    <i class="icon-trash"></i> Delete </a>
-                                                                            </li>
-                                                                            <li>
                                                                                 <a href="{{ f('controller.url', '/'.$entry['$id'].'/update') }}">
                                                                                     <i class="icon-pencil"></i> Edit </a>
                                                                             </li>
+                                                                            <li>
+                                                                                <a href="{{ f('controller.url', '/'.$entry['$id'].'/delete') }}" class="delete-popup">
+                                                                                    <i class="icon-trash"></i> Delete </a>
+                                                                            </li>
+                                                                            
                                                                         </ul>
                                                                     </div>
                                                                 </td>
@@ -293,7 +281,7 @@ foreach (f('controller')->schema() as $key => $field) {
 
                                 @endif
                                 <div class="pull-left pagination">
-                                    <a href="{{f('controller.url','/:mutliid/delete')}}" class="btn red popup btn-multi-delete"> Delete <!-- <i class="fa fa-trash"></i> --></a>
+                                    <a href="{{f('controller.url','/:mutliid/delete')}}" class="btn red btn-multi-delete"> Delete <!-- <i class="fa fa-trash"></i> --></a>
                                 </div>
                                 
                             </div>
