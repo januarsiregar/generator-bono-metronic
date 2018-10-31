@@ -54,8 +54,6 @@ class RoleController extends AppController
             
         }
 
-
-
         return  $prearray;
 
     }

@@ -70,6 +70,8 @@
             </div>
         </div>
     </div>
+@section('additional')
+@show
 @stop
 
 @section('quick.nav')

@@ -1,5 +1,5 @@
 0.0.1 : 8 September 2017
-        - initialitation 
+        - initialitation
         - softlaunch
 0.0.4 : 12 September 2017
         - Bug fixing    :  - Fixing Pagination for sort field
@@ -11,9 +11,9 @@
         - Bug Fixing    :  - Audit trail empty data exception using empty string
         - General       :  - execute component init for popup form.
 0.0.5 : 16 September 2017
-        - General       : - add loader progress for file upload 
-        - General       : - change menu action page search 
-        - General       : - add loader progress for file upload 
+        - General       : - add loader progress for file upload
+        - General       : - change menu action page search
+        - General       : - add loader progress for file upload
 0.2.0 : 14 November 2017
         - General       : - add components search reference.
         - General       : - change Core Role using observer
@@ -21,3 +21,11 @@
         - General       : - using Norm vesion 1.1.8.
         - Preparation   : Norm collection for php 7
         - bugfixing     : - Fixing Pagination for advance querystring
+
+0.5.0:
+        - Bug fixing : - fixing json format for schema sysparamreference
+        - Feature    : - Add notification message/inbox
+        - Feature    : - add api.js for hit request post/get/or posdata using javascript
+        - Feature    : - norm collection for php 7.2.
+        - Bug fixing : - Change Slim Package using 2.6.3 without mcrypt.
+

@@ -17,40 +17,13 @@
         <meta name="description" content="{{ f('pagetitle', 'Great App') }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- GLOBAL MANDATORY -->
-        <link href="<?php echo Theme::base('lato/css/lato-webfont.css') ?>" rel="stylesheet" type="text/css" />
-        <link href="<?php echo Theme::base('js/font-awesome/css/font-awesome.min.css') ?>" rel="stylesheet" type="text/css" />
-        <link href="<?php echo Theme::base('js/simple-line-icons/simple-line-icons.min.css') ?>" rel="stylesheet" type="text/css" />
-        <link href="<?php echo Theme::base('vendor/bootstrap/dist/css/bootstrap.min.css') ?>" rel="stylesheet" type="text/css" />
-        <link href="<?php echo Theme::base('vendor/bootstrap-switch/dist/css/bootstrap2/bootstrap-switch.min.css') ?>" rel="stylesheet" type="text/css" />
-        
-        <!-- PLUGIN GLOBAL -->
-        <link href="<?php echo Theme::base('js/select2/css/select2.min.css') ?>" rel="stylesheet" type="text/css" />
-        <link href="<?php echo Theme::base('js/select2/css/select2-bootstrap.min.css') ?>" rel="stylesheet" type="text/css" />
-        <link href="<?php echo Theme::base('js/datatables/datatables.min.css') ?>" rel="stylesheet" type="text/css" />
-        <link href="<?php echo Theme::base('js/datatables/plugins/bootstrap/datatables.bootstrap.css') ?>" rel="stylesheet" type="text/css" />
-        <link href="<?php echo Theme::base('js/fullcalendar/fullcalendar.min.css') ?>" rel="stylesheet" type="text/css" />
-        <link href="<?php echo Theme::base('assets/global/css/components.min.css') ?>" rel="stylesheet" id="style_components" type="text/css" />
-        <link href="<?php echo Theme::base('assets/global/css/plugins.min.css') ?>" rel="stylesheet" type="text/css" />
-        <link href="<?php echo Theme::base('js/bootstrap-fileinput/bootstrap-fileinput.css') ?>" rel="stylesheet" type="text/css" />
-
-        <!-- PLUGIN EXTERNAL -->
-        <link href="<?php echo Theme::base('vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css') ?>" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo Theme::base('vendor/tshirt-popup/tshirt-popup.css') ?>" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo Theme::base('vendor/jacket-awesome/dist/css/jacket-awesome.min.css') ?>" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo Theme::base('vendor/animate-css/animate.min.css') ?>" rel="stylesheet" type="text/css"/>
-        
-        
-        <!-- THEMES LAYOUT -->
+        <!-- START THEME LAYOUT STYLES -->
+        @include('metronic/css');
         <link href="<?php echo Theme::base('assets/layouts/layout/css/layout.min.css') ?>" rel="stylesheet" type="text/css" />
         <link href="<?php echo Theme::base('assets/layouts/layout/css/themes/darkblue.min.css') ?>" rel="stylesheet" type="text/css" id="style_color" />
         <link href="<?php echo Theme::base('assets/layouts/layout/css/custom.min.css') ?>" rel="stylesheet" type="text/css" />
-        <link href="<?php echo Theme::base('css/component.css') ?>" rel="stylesheet" type="text/css" />
-        <link href="<?php echo Theme::base('css/custom.css') ?>" rel="stylesheet" type="text/css" />
         
-        <!-- custom css for skeleton -->
         <link href="<?php echo Theme::base('css/layouts/layout.css') ?>" rel="stylesheet" type="text/css" />
-        
         <!-- END THEME LAYOUT STYLES -->
 
         <!-- <link rel="shortcut icon" href="favicon.ico" /> -->
@@ -236,53 +209,10 @@
 
 
 
-        <!-- BEGIN CORE PLUGINS -->
-        <script src="<?php echo Theme::base('vendor/jquery/dist/jquery.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('vendor/bootstrap/dist/js/bootstrap.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('js/js.cookie.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('js/jquery-inputmask/jquery.inputmask.bundle.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('vendor/jquery.slimscroll/jquery.slimscroll.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('js/jquery.blockui.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('vendor/bootstrap-switch/dist/js/bootstrap-switch.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('vendor/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js') ?>" type="text/javascript"></script>
-        <!-- END CORE PLUGINS -->
-
-        <!-- BEGIN PAGE LEVEL PLUGINS -->
-        <script src="<?php echo Theme::base('js/moment.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('js/fullcalendar/fullcalendar.min.js') ?>" type="text/javascript"></script>
-        <!-- END PAGE LEVEL PLUGINS -->
-
-        
-        <!-- PLUGIN GLOBAL -->
-        <script src="<?php echo Theme::base('js/select2/js/select2.full.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('js/select2/js/select2.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('assets/global/scripts/datatable.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('js/datatables/datatables.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('js/datatables/plugins/bootstrap/datatables.bootstrap.js') ?>" type="text/javascript"></script>
-        
-
-        <script src="<?php echo Theme::base('vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('vendor/highcharts/highcharts.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('vendor/highcharts/modules/exporting.js') ?>" type="text/javascript"></script>
-        
-        <!-- BEGIN THEME GLOBAL SCRIPTS -->
-        <script src="<?php echo Theme::base('assets/global/scripts/app.min.js') ?>" type="text/javascript"></script>
-        <!-- END THEME GLOBAL SCRIPTS -->
-        
-        
-        <!-- PLUGIN THEMES LAYOUT -->
+       
+        <!-- END THEME LAYOUT SCRIPTS -->    
+        @include('metronic/javascript')
         <script src="<?php echo Theme::base('assets/layouts/layout/scripts/layout.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('assets/layouts/global/scripts/quick-sidebar.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('assets/layouts/global/scripts/quick-nav.min.js') ?>" type="text/javascript"></script>
-        
-        
-        <!-- PLUGIN EXTERNAL -->
-        <script src="<?php echo Theme::base('js/vendor_modified/tshirt-popup.js') ?>" type="application/javascript"></script>
-        <script src="<?php echo Theme::base('js/metronic/custom.js') ?>" type="text/javascript"></script>
-        
-        @include('script-external')
-        
-        
         <!-- END THEME LAYOUT SCRIPTS -->
         
         

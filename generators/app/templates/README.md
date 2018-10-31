@@ -1,4 +1,4 @@
-bono-arch
+bono-metronic
 =========
 
-Bono Archetype using Naked, T-Shirt and Sketch
+Bono Archetype using Bootstrap framework and metronic style

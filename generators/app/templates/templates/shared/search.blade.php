@@ -55,11 +55,17 @@ foreach (f('controller')->schema() as $key => $field) {
                         <div class="table-toolbar">
                             <div class="row">
                                 <div class="col-md-7 col-sm-7 col-xs-12">
+                                    @section('button.action')
                                     <div class="btn-group">
+                                        @section('button.action.primary')
                                         <a href="{{ f('controller.url', '/null/create') }}" id="sample_editable_1_new" class="btn sbold blue"> Create
                                             <i class="fa fa-plus"></i>
                                         </a>
+                                        @show
+                                        @section('button.action.secondary')
+                                        @show
                                     </div>
+                                    @show 
                                 </div>
                                 <div class="col-md-5 col-sm-5 col-xs-12">
                                     @section('form-search')
@@ -123,56 +129,6 @@ foreach (f('controller')->schema() as $key => $field) {
                                                                                 <label for="form_control_1">Input with help</label>
                                                                                 <span class="help-block">Some help goes here...</span>
                                                                             </div>
-                                                                            <div class="form-group form-md-line-input has-success">
-                                                                                <input type="text" class="form-control" id="form_control_1" placeholder="Success state">
-                                                                                <label for="form_control_1">Success input</label>
-                                                                            </div>
-                                                                            <div class="form-group form-md-line-input has-warning">
-                                                                                <input type="text" class="form-control" id="form_control_1" placeholder="Warning state">
-                                                                                <label for="form_control_1">Warning input</label>
-                                                                            </div>
-                                                                            <div class="form-group form-md-line-input has-error">
-                                                                                <input type="text" class="form-control" id="form_control_1" placeholder="Error state">
-                                                                                <label for="form_control_1">Error input</label>
-                                                                            </div>
-                                                                            <div class="form-group form-md-line-input has-info">
-                                                                                <input type="text" class="form-control" id="form_control_1" placeholder="Info state">
-                                                                                <label for="form_control_1">Info input</label>
-                                                                            </div>
-                                                                            <div class="form-group form-md-line-input has-info">
-                                                                                <select class="form-control" id="form_control_1">
-                                                                                    <option value=""></option>
-                                                                                    <option value="1">Option 1</option>
-                                                                                    <option value="2">Option 2</option>
-                                                                                    <option value="3">Option 3</option>
-                                                                                    <option value="4">Option 4</option>
-                                                                                </select>
-                                                                                <label for="form_control_1">Dropdown sample</label>
-                                                                            </div>
-                                                                            <div class="form-group form-md-line-input">
-                                                                                <textarea class="form-control" rows="3" placeholder="Enter more text"></textarea>
-                                                                                <label for="form_control_1">Textarea input</label>
-                                                                            </div>
-                                                                            <div class="form-group form-md-line-input has-error">
-                                                                                <input type="text" class="form-control" disabled id="form_control_1" placeholder="Disable">
-                                                                                <label for="form_control_1">Disabled</label>
-                                                                            </div>
-                                                                            <div class="form-group form-md-line-input has-error">
-                                                                                <input type="text" class="form-control" readonly value="You can't edit this" id="form_control_1">
-                                                                                <label for="form_control_1">Readonly</label>
-                                                                            </div>
-                                                                            <div class="form-group form-md-line-input">
-                                                                                <div class="form-control form-control-static"> email@example.com </div>
-                                                                                <label for="form_control_1">Static Control</label>
-                                                                            </div>
-                                                                            <div class="form-group form-md-line-input has-info">
-                                                                                <input type="text" class="form-control input-sm" id="form_control_1" placeholder=".input-sm">
-                                                                                <label for="form_control_1">Small input</label>
-                                                                            </div>
-                                                                            <div class="form-group form-md-line-input has-info">
-                                                                                <input type="text" class="form-control input-lg" id="form_control_1" placeholder=".input-lg">
-                                                                                <label for="form_control_1">Large input</label>
-                                                                            </div>
                                                                         </div>
                                                                         <div>
                                                                             <button type="button" class="btn blue">Submit</button>
@@ -192,6 +148,7 @@ foreach (f('controller')->schema() as $key => $field) {
                                     @show
                                 </div>
                             </div>
+                        @section('table.search')
                             <div class="table-fix">
                                 <div class="table-scrollable search-table">
                                     <table class="table table-striped table-bordered table-hover table-checkable order-column dataTable no-footer fixed-tail" id="sample_1">
@@ -268,6 +225,7 @@ foreach (f('controller')->schema() as $key => $field) {
                                     </table>
                                 </div>
                             </div>
+                        @show
                         <tr>
                             <div>
                                 @if($entries->count(true))

@@ -93,6 +93,8 @@ select.form-control {
 .form-group.form-md-line-input .select2-dropdown.select2-dropdown--below {
     border-color: #fff;
 }
+
+
 /*
 .form-group.form-md-line-input .control-label {
     top: 0;
@@ -128,11 +130,9 @@ button.mt-multiselect.btn.btn-default:hover {
 
 /* material degign */
 
-
 .form-group.form-md-line-input {
-    margin: 0 0 25px;
+    margin: 0 0 10px;
 }
-
 
 .input-group-addon.btn {
     padding: 0;
@@ -216,6 +216,10 @@ table.fixed-tail tr:nth-of-type(odd) td:last-child {
 table.fixed-tail th:last-child,
 table.fixed-tail tr:nth-of-type(even) td:last-child {
     background-color: #fff;
+}
+
+table tbody td tr {
+    white-space: nowrap;
 }
 
 
@@ -358,7 +362,6 @@ table.fixed-tail th:last-child {
 
 
 /* logo */
-
 
 .page-lock .page-logo .brand .logo {
     width: 100%;

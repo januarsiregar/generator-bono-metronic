@@ -2,7 +2,7 @@
 CREATE TABLE `sysparam` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `groups` varchar(255)  NULL,
-  `key` varchar(255)  NULL,
+  `key` varchar(50)  NULL,
   `value` varchar(255)  NULL,
   `long_value` text,
   `order_param` int(11)  NULL,

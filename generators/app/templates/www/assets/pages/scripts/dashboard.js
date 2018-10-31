@@ -1,6 +1,6 @@
 $(document).ready(function() {
 $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.json&callback=?', function (data) {
-    console.log(Highcharts);
+    // console.log(Highcharts);
     Highcharts.chart('container', {
             chart: {
                 zoomType: 'x'

@@ -12,38 +12,12 @@
     <meta name="description" content="{{ f('pagetitle', 'Great App') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- GLOBAL MANDATORY -->
-    <link href="<?php echo Theme::base('lato/css/lato-webfont.css') ?>" rel="stylesheet" type="text/css" />
-    <link href="<?php echo Theme::base('js/font-awesome/css/font-awesome.min.css') ?>" rel="stylesheet" type="text/css" />
-    <link href="<?php echo Theme::base('js/simple-line-icons/simple-line-icons.min.css') ?>" rel="stylesheet" type="text/css" />
-    <link href="<?php echo Theme::base('vendor/bootstrap/dist/css/bootstrap.min.css') ?>" rel="stylesheet" type="text/css" />
-    <link href="<?php echo Theme::base('vendor/bootstrap-switch/dist/css/bootstrap2/bootstrap-switch.min.css') ?>" rel="stylesheet" type="text/css" />
-    
-    <!-- PLUGIN GLOBAL -->
-    <link href="<?php echo Theme::base('js/select2/css/select2.min.css') ?>" rel="stylesheet" type="text/css" />
-    <link href="<?php echo Theme::base('js/select2/css/select2-bootstrap.min.css') ?>" rel="stylesheet" type="text/css" />
-    <link href="<?php echo Theme::base('js/datatables/datatables.min.css') ?>" rel="stylesheet" type="text/css" />
-    <link href="<?php echo Theme::base('js/datatables/plugins/bootstrap/datatables.bootstrap.css') ?>" rel="stylesheet" type="text/css" />
-    <link href="<?php echo Theme::base('js/fullcalendar/fullcalendar.min.css') ?>" rel="stylesheet" type="text/css" />
-    <link href="<?php echo Theme::base('assets/global/css/components.min.css') ?>" rel="stylesheet" id="style_components" type="text/css" />
-    <link href="<?php echo Theme::base('assets/global/css/plugins.min.css') ?>" rel="stylesheet" type="text/css" />
-    <link href="<?php echo Theme::base('js/bootstrap-fileinput/bootstrap-fileinput.css') ?>" rel="stylesheet" type="text/css" />
 
-    <!-- PLUGIN EXTERNAL -->
-    <link href="<?php echo Theme::base('vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css') ?>" rel="stylesheet" type="text/css"/>
-    <link href="<?php echo Theme::base('vendor/tshirt-popup/tshirt-popup.css') ?>" rel="stylesheet" type="text/css"/>
-    <link href="<?php echo Theme::base('vendor/jacket-awesome/dist/css/jacket-awesome.min.css') ?>" rel="stylesheet" type="text/css"/>
-    <link href="<?php echo Theme::base('vendor/animate-css/animate.min.css') ?>" rel="stylesheet" type="text/css"/>
-    
-    
-    <!-- THEMES LAYOUT -->
+    @include('metronic/css')
+    <!-- custom css for skeleton4 -->
     <link href="<?php echo Theme::base('assets/layouts/layout4/css/layout.min.css') ?>" rel="stylesheet" type="text/css" />
     <link href="<?php echo Theme::base('assets/layouts/layout4/css/themes/default.min.css') ?>" rel="stylesheet" type="text/css" id="style_color" />
     <link href="<?php echo Theme::base('assets/layouts/layout4/css/custom.min.css')?>" rel="stylesheet" type="text/css" />
-    <link href="<?php echo Theme::base('css/custom.css') ?>" rel="stylesheet" type="text/css" />
-    <link href="<?php echo Theme::base('css/component.css') ?>" rel="stylesheet" type="text/css" />
-
-    <!-- custom css for skeleton4 -->
     <link href="<?php echo Theme::base('css/layouts/layout4.css') ?>" rel="stylesheet" type="text/css" />
 
     <!-- <link rel="shortcut icon" href="favicon.ico" /> -->
@@ -179,16 +153,16 @@
                             @show
                             @section('modal')
 
-                             <div class="modal fade template" id="modal_template" role="basic" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-body">
-                                                <img src="../www/assets/global/img/loading-spinner-grey.gif" alt="" class="loading">
-                                                <span> &nbsp;&nbsp;Loading... </span>
-                                            </div>
+                            <!-- <div class="modal fade template" id="modal_template" role="basic" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <img src="../www/assets/global/img/loading-spinner-grey.gif" alt="" class="loading">
+                                            <span> &nbsp;&nbsp;Loading... </span>
                                         </div>
                                     </div>
-                             </div>
+                                </div>
+                            </div> -->
 
                             @show
                         </main>
@@ -224,84 +198,15 @@
         <!-- END FOOTER -->
         <!-- BEGIN QUICK NAV -->
         @section('quick.nav')
-        <nav class="quick-nav">
-            <a class="quick-nav-trigger" href="#0">
-                <span aria-hidden="true"></span>
-            </a>
-            <ul>
-                <li>
-                    <a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" target="_blank" class="active">
-                        <span>Purchase Metronic</span>
-                        <i class="icon-basket"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/reviews/4021469?ref=keenthemes" target="_blank">
-                        <span>Customer Reviews</span>
-                        <i class="icon-users"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://keenthemes.com/showcast/" target="_blank">
-                        <span>Showcase</span>
-                        <i class="icon-user"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://keenthemes.com/metronic-theme/changelog/" target="_blank">
-                        <span>Changelog</span>
-                        <i class="icon-graph"></i>
-                    </a>
-                </li>
-            </ul>
-            <span aria-hidden="true" class="quick-nav-bg"></span>
-        </nav>
-        <div class="quick-nav-overlay"></div>
+
         @show
 
-        
-        <script src="<?php echo Theme::base('vendor/jquery/dist/jquery.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('vendor/bootstrap/dist/js/bootstrap.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('js/js.cookie.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('js/jquery-inputmask/jquery.inputmask.bundle.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('vendor/jquery.slimscroll/jquery.slimscroll.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('js/jquery.blockui.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('vendor/bootstrap-switch/dist/js/bootstrap-switch.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('vendor/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js') ?>" type="text/javascript"></script>
-        <!-- END CORE PLUGINS -->
 
-        <!-- BEGIN PAGE LEVEL PLUGINS -->
-        <script src="<?php echo Theme::base('js/moment.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('js/fullcalendar/fullcalendar.min.js') ?>" type="text/javascript"></script>
-        <!-- END PAGE LEVEL PLUGINS -->
 
-        <!-- BEGIN THEME GLOBAL SCRIPTS -->
-        <script src="<?php echo Theme::base('assets/global/scripts/app.min.js') ?>" type="text/javascript"></script>
-        <!-- END THEME GLOBAL SCRIPTS -->
-        
-        <!-- PLUGIN GLOBAL -->
-        <script src="<?php echo Theme::base('js/select2/js/select2.full.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('js/select2/js/select2.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('assets/global/scripts/datatable.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('js/datatables/datatables.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('js/datatables/plugins/bootstrap/datatables.bootstrap.js') ?>" type="text/javascript"></script>
-        
-        <script src="<?php echo Theme::base('vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('vendor/highcharts/highcharts.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('vendor/highcharts/modules/exporting.js') ?>" type="text/javascript"></script>
-        
-        <!-- PLUGIN THEMES LAYOUT -->
+        @include('metronic/javascript')
         <script src="<?php echo Theme::base('assets/layouts/layout4/scripts/layout.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('assets/layouts/global/scripts/quick-sidebar.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo Theme::base('assets/layouts/global/scripts/quick-nav.min.js') ?>" type="text/javascript"></script>
-        
-        <!-- PLUGIN EXTERNAL -->
-        <script src="<?php echo Theme::base('js/vendor_modified/tshirt-popup.js') ?>" type="application/javascript"></script>
-        <script src="<?php echo Theme::base('js/custom.js') ?>" type="text/javascript"></script>
-        
-        @include('script-external')
         <!-- END THEME LAYOUT SCRIPTS -->
-        
+
         <!-- END PAGE LEVEL SCRIPTS -->
         @section('customjs')
         <!-- Custom JS -->

@@ -20,7 +20,6 @@
     "highcharts": "*",
     "html5shiv": "~3.7.x",
     "normalize-css": "~3.0.x",
-    "owl-carousel": "~1.3.x",
     "respond": "~1.4.x",
     "tshirt-popup": "~1.0.x"
   },

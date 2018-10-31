@@ -28,9 +28,12 @@ class LoginProvider extends \Bono\Provider\Provider
                 $auth_uris = array_merge($auth_uris, $value);
             }
 
-            $_SESSION['role_names'] = $role_names;
-            $_SESSION['auth_uris'] = $auth_uris;
+            
+            $user['roles_name'] = $role_names;
+            $user['auth_uris'] = $auth_uris;
 
+            $_SESSION['user'] = $user;
+            
             return $user;
         });
 
@@ -41,14 +44,15 @@ class LoginProvider extends \Bono\Provider\Provider
                 return $options;
             }
 
+
             if(preg_match('/\/.*\.json/', $app->request->getPathInfo())){
                  if(!empty($_SESSION['user'])){
                         return true;
                  }
             }
 
-            $role = isset($_SESSION['role_names']) ? $_SESSION['role_names'] : null;
-            if (!is_null($role)) {
+            $user = isset($_SESSION['user']) ? $_SESSION['user'] : null;
+            if (!is_null($user)) {
 
                 /* Allow user to access homepage */
                 if (empty($options['uri'])) {
@@ -60,7 +64,7 @@ class LoginProvider extends \Bono\Provider\Provider
 
 
                 /* Allow this user for access all authorized uri */
-                $auth_uris = $_SESSION['auth_uris'];
+                $auth_uris = $user['auth_uris'];
 
                 foreach ($auth_uris as $auth_uri) {
                     /* Allow admin for access all URI */

@@ -7,6 +7,11 @@ class MetronicProvider extends \Bono\Provider\Provider
     public function initialize()
     {
         $app = $this->app;
+        $that = $this;
+
+        $app->filter('generate.menu', function ($options = null) use ($that) {
+            return $that->generateMenu($options);
+        });        
 
         $app->get('/global-search',function() use($app){
         	$app->response->template('global-search');
@@ -22,6 +27,11 @@ class MetronicProvider extends \Bono\Provider\Provider
             $this->uploadFile($app);
         });
         
+    }
+
+    private function generateMenu($options){
+        $config = $this->app->config('menu.structure');
+
     }
 
 

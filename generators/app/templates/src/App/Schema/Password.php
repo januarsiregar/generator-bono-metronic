@@ -20,7 +20,7 @@ class Password extends Field
     public function formatInput($value, $entry = null)
     {
         return '
-            <div class="row">
+            <div class="row password">
                 <div class="col-md-6">
                     <input class="form-control" type="password" name="'.$this['name'].
                     '" value="" placeholder="Password" autocomplete="off" />

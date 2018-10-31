@@ -1,6 +1,6 @@
 <?php
 
-use Norm\Schema\String;
+use Norm\Schema\NormString;
 use App\Schema\InputMask;
 use App\Schema\Thumbnail;
 use App\Schema\FileUpload;
@@ -17,8 +17,8 @@ use Norm\Schema\NormDateTime;
 return array(
     'schema' => array(
         'photo'   => Thumbnail::create('photo','Gambar')->set('list-column', true)->set('bucket','storage'),
-        'nama'   => String::create('nama')->set('list-column', true),
-        'alamat'      => String::create('alamat')->set('list-column', true),
+        'nama'   => NormString::create('nama')->set('list-column', true),
+        'alamat'      => NormString::create('alamat')->set('list-column', true),
         'ktp'      => InputMask::create('ktp')->set('list-column', true)->set_mask('99-9999-99_99.999'),
         'file2' => FileUpload::create('file2')->set('list-column', true),
         

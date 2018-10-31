@@ -38,6 +38,7 @@
                                     @if (!$field['hidden'])
                                         <div class="col-md-6">
                                             <div class="form-group form-md-line-input">
+                                                
                                                 {{ $entry->format($name, 'input') }}
                                                 {{ $field->label() }}
                                                 <span class="help-block"></span>

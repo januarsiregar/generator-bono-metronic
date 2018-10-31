@@ -12,10 +12,9 @@
  * @link      http://xinix.co.id/products/bono
  */
 
-use Norm\Schema\String;
-use Norm\Schema\Password;
+use App\Library\Resolver;
 
-return array(
+$config =  array(
     'application' => array(
         'title' => 'Bono Metronic',
         'subtitle' => 'One great application'
@@ -32,22 +31,17 @@ return array(
     'bono.providers' => array(
         'Norm\\Provider\\NormProvider' => array(
             'datasources' => array(
-                // to use mongo
-                'mongo' => array(
-                    'driver' => 'Norm\\Connection\\MongoConnection',
-                    'database' => 'bono',
-                ),
 
                 // to use mysql
-                // 'mysql' => array(
-                //     'driver'   => '\\Norm\\Connection\\PDOConnection',
-                //     'dialect'  => '\\Norm\\Dialect\\MySQLDialect',
-                //     'prefix'   => 'mysql',
-                //     'dbname'   => 'bono',
-                //     'host'     => 'localhost',
-                //     'username' => 'root',
-                //     'password' => 'password',
-                // )
+                'mysql' => array(
+                    'driver'   => '\\Norm\\Connection\\PDOConnection',
+                    'dialect'  => '\\Norm\\Dialect\\MySQLDialect',
+                    'prefix'   => 'mysql',
+                    'dbname'   => 'bono',
+                    'host'     => 'localhost',
+                    'username' => 'root',
+                    'password' => 'password',
+                )
             ),
             'collections' => array(
                 'default' => array(
@@ -70,24 +64,26 @@ return array(
         'Bono\\Provider\\LanguageProvider' => null,
         'App\\Provider\\AppProvider'=> null,
         'App\\Provider\\MetronicProvider'=>array(
-                'Upload_Directory' => dirname(__DIR__).'/www',// set directory for upload on application 
+                'Upload_Directory' => dirname(__DIR__).'/www',// set directory for upload on application
                 'bucket' => 'data'
         ),
         // uncomment below to enable auth
         // 'App\\Provider\\LoginProvider',
     ),
     'bono.middlewares' => array(
-        
+
         'Bono\\Middleware\\StaticPageMiddleware' => null,
         'Bono\\Middleware\\ControllerMiddleware' => array(
             'default' => 'App\\Controller\\AppController',
             'mapping' => array(
                 '/user' => null,
                 '/test' => null,
+                '/notification' => null,
                 '/previleges' => null,
                 '/sysparam' => null,
                 '/audit_trail' => null,
-                '/role' => '\\App\Controller\\RoleController'
+                '/notification_system' => null,
+                '/role' => '\\App\Controller\\RoleController',
             ),
         ),
         // uncomment below to enable auth
@@ -97,7 +93,7 @@ return array(
         'App\\Middleware\\MetronicNotificationMiddleware' => null,
         'App\\Middleware\\AuditTrailMiddleware' => null,
         'Bono\\Middleware\\SessionMiddleware' => null,
-        
+
         'Bono\\Middleware\\ContentNegotiatorMiddleware' => array(
             'extensions' => array(
                 'json' => 'application/json',
@@ -106,6 +102,9 @@ return array(
                 'application/json' => 'Bono\\View\\JsonView',
             ),
         ),
-        
+
     ),
 );
+
+
+return Resolver::resolver($config,'custom');
