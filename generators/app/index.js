@@ -1,12 +1,11 @@
 'use strict';
 var Generator = require('yeoman-generator');
-var chalk = require('chalk');
 var yosay = require('yosay');
 var fs = require('fs');
 var spawn = require('child_process').spawn;
 
-module.exports = Generator.extend({
-  prompting: function () {
+module.exports = class MyBonoMetronic extends Generator {
+  prompting() {
     // Have Yeoman greet the user.
     this.log(yosay(
       'Welcome to the Bono Metronic generator!'
@@ -24,9 +23,9 @@ module.exports = Generator.extend({
 
       this.props = props;
     }.bind(this));
-  },
+  }
 
-  writing: function () {
+  writing() {
     var dir = './' + this.props.projectname;
     console.log(dir);
     if (!fs.existsSync(dir)) {
@@ -37,9 +36,9 @@ module.exports = Generator.extend({
       this.templatePath('**/*'),
       this.destinationPath(dir)
     );
-  },
+  }
 
-  install: function () {
+  install() {
     var dir = './' + this.props.projectname;
 
     this.log('Converting hidden File');
@@ -70,4 +69,4 @@ module.exports = Generator.extend({
       console.log(`child process exited with code ${code}`);
     });
   }
-});
+};
